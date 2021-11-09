@@ -58,6 +58,22 @@ def reduce(String key, Iterator values):
 
 这里的 Master Routine 实际上就是将4个 MapWorker 生产的临时 Key-Value pair 数据分配到两个 ReduceWorker 上继续汇总，最后将 ReduceWorker 生产的结果再传递到 SumReduce 上进行最终汇总。
 
+演示效果：
+
+```bash
+# 04-mapreduce on 🌱 main via 🐹 v1.17.2 
+❯ make build
+go build -o examples/main.out examples/main.go
+
+# 04-mapreduce on 🌱 main via 🐹 v1.17.2 
+❯ ./examples/main.out 
+	Inheritance taxes are getting so out of line, that the deceased family
+often doesn't have a legacy to stand on.
+
+map[Inheritance:1 a:1 are:1 deceased:1 doesn't:1 family:1 getting:1 have:1 legacy:1 line:1 of:1 often:1 on:1 out:1 so:1 stand:1 taxes:1 that:1 the:1 to:1]
+time elapesed: 303.324µs
+```
+
 
 
 # 参考资料
